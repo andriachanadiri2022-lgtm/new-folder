@@ -1,38 +1,27 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f6f4ef">
-    <title>Restaurant Menu</title>
+    <meta name="referrer" content="noreferrer">
+    <title>Product Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <a class="brand" href="#" aria-label="Restaurant home">
-                <span class="brand-mark" aria-hidden="true">R</span>
-                <span>რესტორანი</span>
-            </a>
-            <div class="basket-indicator" aria-live="polite">
-                <span class="basket-icon" aria-hidden="true">🛍</span>
-                <span>კალათა</span>
-                <span class="basket-count" id="basket-count">0</span>
-            </div>
-        </div>
-    </header>
-    <main class="container">
-        <section class="intro">
-            <p class="eyebrow">ახალი გემოები ყოველდღე</p>
-            <h1>ჩვენი მენიუ</h1>
-            <p class="intro-copy">აირჩიეთ კატეგორია და აღმოაჩინეთ თქვენი საყვარელი კერძი.</p>
-        </section>
-        <nav class="categories" id="categories" aria-label="პროდუქტის კატეგორიები">
-            <button class="category-button is-active" type="button" data-category="all">ყველა</button>
-        </nav>
-        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
-        <section class="product-grid" id="product-grid" aria-label="პროდუქტები"></section>
-    </main>
-    <script src="main.js"></script>
+
+    <h1>Product Store</h1>
+
+    <input type="text" id="searchInput" placeholder="Search products">
+    <button onclick="searchProducts()">Search</button>
+
+    <div id="products" class="products"></div>
+
+    <div class="pagination">
+        <button onclick="getProducts(1)">1</button>
+        <button onclick="getProducts(2)">2</button>
+        <button onclick="getProducts(3)">3</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

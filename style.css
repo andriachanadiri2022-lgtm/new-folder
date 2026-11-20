@@ -1,348 +1,94 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
-
-:root {
-    font-family: "DM Sans", "Segoe UI", sans-serif;
-    color: #f7f3eb;
-    background: #171815;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    --muted: #a7a69e;
-    --gold: #d7ae70;
-    --panel: #22231f;
-    --line: rgb(255 255 255 / 9%);
-}
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    min-width: 320px;
-    min-height: 100vh;
     margin: 0;
-    background:
-        radial-gradient(ellipse at 50% -20%, rgb(183 138 77 / 15%), transparent 48%),
-        #171815;
-}
-
-button {
-    font: inherit;
-}
-
-.site-header {
-    border-bottom: 1px solid var(--line);
-    background: rgb(23 24 21 / 88%);
-    backdrop-filter: blur(16px);
-}
-
-.header-content,
-.container {
-    width: min(1120px, calc(100% - 48px));
-    margin: 0 auto;
-}
-
-.header-content {
-    display: flex;
-    min-height: 76px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: #f7f3eb;
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 19px;
-    text-decoration: none;
-}
-
-.brand-mark {
-    display: grid;
-    width: 37px;
-    height: 37px;
-    place-items: center;
-    border: 1px solid rgb(215 174 112 / 54%);
-    border-radius: 50%;
-    color: var(--gold);
-    font-family: Georgia, serif;
-    font-size: 20px;
-}
-
-.basket-indicator {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #e8e4da;
-    font-size: 13px;
-}
-
-.basket-icon {
-    color: var(--gold);
-    font-size: 17px;
-}
-
-.basket-count {
-    display: grid;
-    min-width: 23px;
-    height: 23px;
-    padding: 0 6px;
-    place-items: center;
-    border: 1px solid rgb(215 174 112 / 40%);
-    border-radius: 50px;
-    color: var(--gold);
-    font-size: 11px;
-}
-
-.container {
-    padding: 78px 0 96px;
-}
-
-.intro {
-    margin-bottom: 42px;
-    text-align: center;
-}
-
-.eyebrow {
-    margin: 0 0 15px;
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+    padding: 32px 20px 60px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1c1f24;
 }
 
 h1 {
-    margin: 0;
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(40px, 6vw, 58px);
-    font-weight: 500;
-    letter-spacing: -0.035em;
-}
-
-.intro-copy {
-    margin: 13px 0 0;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.categories {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 9px;
-}
-
-.category-button {
-    padding: 9px 15px;
-    border: 1px solid var(--line);
-    border-radius: 30px;
-    background: transparent;
-    color: #c2c0b8;
-    cursor: pointer;
-    font-size: 12px;
-    transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
-}
-
-.category-button:hover {
-    border-color: rgb(215 174 112 / 60%);
-    color: var(--gold);
-}
-
-.category-button.is-active {
-    border-color: var(--gold);
-    background: var(--gold);
-    color: #211d16;
-    font-weight: 700;
-}
-
-.status-message {
-    min-height: 18px;
-    margin: 27px 0 18px;
-    color: #777870;
-    font-size: 11px;
-    letter-spacing: 0.06em;
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    font-size: 32px;
     text-align: center;
 }
-
-.status-message.is-error {
-    color: #f18a7a;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.product-card {
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 13px;
-    background: var(--panel);
-    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    border-color: rgb(215 174 112 / 38%);
-    box-shadow: 0 18px 40px rgb(0 0 0 / 24%);
-}
-
-.product-image-wrap {
-    position: relative;
-    height: 220px;
-    overflow: hidden;
-    background: linear-gradient(140deg, #39352c, #292a25);
-}
-
-.product-image-wrap.image-unavailable::after {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    color: var(--gold);
-    content: "რესტორნის არჩევანი";
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 20px;
-}
-
-.product-image {
+input[type="text"] {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 500ms ease;
+    max-width: 420px;
+    margin: 0 auto 12px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    color: inherit;
+    background: #ffffff;
+    border: 1px solid #d6d9e0;
+    border-radius: 10px;
+    outline: none;
 }
 
-.product-card:hover .product-image {
-    transform: scale(1.045);
+input[type="text"]:focus {
+    border-color: #2f6fed;
+    box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.15);
 }
 
-.product-details {
-    padding: 19px 20px 20px;
-}
-
-.product-tag {
-    margin: 0 0 8px;
-    color: var(--gold);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-}
-
-.product-name {
-    min-height: 46px;
-    margin: 0;
-    color: #f1eee6;
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.4;
-}
-
-.product-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid var(--line);
-}
-
-.product-price {
-    color: #f2eee5;
-    font-size: 16px;
+body > button {
+    display: block;
+    margin: 0 auto 32px;
+    padding: 12px 28px;
+    font-size: 15px;
     font-weight: 600;
-}
-
-.product-price small {
-    color: var(--gold);
-    font-size: 12px;
-}
-
-.add-button {
-    padding: 9px 13px;
-    border: 1px solid rgb(215 174 112 / 60%);
-    border-radius: 7px;
-    background: transparent;
-    color: var(--gold);
+    font-family: inherit;
+    color: #ffffff;
+    background: #2f6fed;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 11px;
-    font-weight: 600;
-    transition: background 160ms ease, color 160ms ease, opacity 160ms ease;
+    transition: background 0.15s ease;
+}
+body > button:hover {
+    background: #1f57c9;
 }
 
-.add-button:hover {
-    background: var(--gold);
-    color: #211d16;
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.add-button:disabled {
-    cursor: wait;
-    opacity: 0.5;
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e4e6eb;
+    border-radius: 14px;
+    padding: 14px;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-button:focus-visible,
-a:focus-visible {
-    outline: 2px solid #f1cf94;
-    outline-offset: 3px;
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(20, 25, 35, 0.1);
 }
 
-@media (max-width: 850px) {
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-    }
-
-    .product-image-wrap {
-        height: 190px;
-    }
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #eceef2;
+    margin-bottom: 12px;
 }
 
-@media (max-width: 560px) {
-    .header-content,
-    .container {
-        width: calc(100% - 32px);
-    }
-
-    .container {
-        padding: 55px 0 64px;
-    }
-
-    .intro {
-        margin-bottom: 30px;
-    }
-
-    .categories {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 2px 0 8px;
-        scrollbar-width: none;
-    }
-
-    .categories::-webkit-scrollbar {
-        display: none;
-    }
-
-    .category-button {
-        flex: 0 0 auto;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .product-image-wrap {
-        height: 220px;
-    }
-
-    .product-name {
-        min-height: auto;
-    }
+.card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.35;
 }
